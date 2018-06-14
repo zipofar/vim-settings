@@ -8,15 +8,22 @@ set list!
 set listchars=tab:▸\ ,eol:¬
 "set list listchars+=space:␣
 
+"#### For LightLine ####
+set laststatus=2
+if !has('gui_running')
+	set t_Co=256
+endif
+
 colorscheme material-monokai
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'https://github.com/scrooloose/nerdtree.git'
-Plug 'https://github.com/vim-airline/vim-airline.git'
 Plug 'https://github.com/phanviet/vim-monokai-pro.git'
 Plug 'https://github.com/Yggdroot/duoduo.git'
 Plug 'https://github.com/ajmwagar/vim-deus.git'
+Plug 'https://github.com/jiangmiao/auto-pairs.git'
+Plug 'https://github.com/itchyny/lightline.vim.git'
 
 call plug#end()
 
