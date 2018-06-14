@@ -8,10 +8,15 @@ set list!
 set listchars=tab:▸\ ,eol:¬
 "set list listchars+=space:␣
 
+colorscheme material-monokai
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/vim-airline/vim-airline.git'
+Plug 'https://github.com/phanviet/vim-monokai-pro.git'
+Plug 'https://github.com/Yggdroot/duoduo.git'
+Plug 'https://github.com/ajmwagar/vim-deus.git'
 
 call plug#end()
 
