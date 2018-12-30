@@ -2,6 +2,7 @@ set tabstop=2
 set shiftwidth=2
 set smarttab
 set smartindent
+set et
 set number
 
 set list!
