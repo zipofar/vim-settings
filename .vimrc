@@ -1,37 +1,59 @@
+setglobal nocompatible
+setglobal pastetoggle=<F2>
+
 set tabstop=2
 set shiftwidth=2
-set smarttab
 set smartindent
-set et
+set expandtab
 set number
 
 set list!
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:→\ 
 "set list listchars+=space:␣
 
-"#### For LightLine ####
-set laststatus=2
-if !has('gui_running')
-	set t_Co=256
-endif
-
-colorscheme material-monokai
+"if !has('gui_running')
+  set t_Co=256
+"endif
+colors deus
+set background=dark
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
+"hi Normal ctermbg=White ctermfg=Black guifg=Black guibg=White
+":PluginInstall
 
 call plug#begin('~/.vim/plugged')
+Plug 'w0rp/ale'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'slim-template/vim-slim', { 'for': ['slim', 'slime'] }
+Plug 'elzr/vim-json'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
+Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
 
+Plug 'itchyny/lightline.vim'
 Plug 'https://github.com/scrooloose/nerdtree.git'
-Plug 'https://github.com/phanviet/vim-monokai-pro.git'
-Plug 'https://github.com/Yggdroot/duoduo.git'
-Plug 'https://github.com/ajmwagar/vim-deus.git'
-Plug 'https://github.com/jiangmiao/auto-pairs.git'
-Plug 'https://github.com/itchyny/lightline.vim.git'
-
+Plug 'ajmwagar/vim-deus'
+Plug 'https://github.com/Townk/vim-autoclose.git'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 call plug#end()
 
+let NERDTreeShowHidden=1
+let mapleader = ","
 
-"#### REPLACE SPACES TO TABS ####
-"First, you need to decide how many spaces will have a single tab. That said, suppose you have lines with leading 4 spaces, or 8... Than you realize you probably want a tab to be 4 spaces. Now with that info, you do:
-"https://stackoverflow.com/questions/9104706/how-can-i-convert-spaces-to-tabs-in-vim-or-linux
-":set ts=4
-":set noet
-":%retab!
+" https://github.com/vim/vim/blob/master/runtime/doc/russian.txt
+" Enable hotkeys for Russian layout
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+" setlocal spell spelllang=en_us,ru_ru
+
+
+nmap <silent> <leader><leader> :NERDTreeToggle<CR>
+
+" Map ctrl-movement keys to window switching
+map <C-k> <C-w><Up>
+map <C-j> <C-w><Down>
+map <C-l> <C-w><Right>
+map <C-h> <C-w><Left>
