@@ -6,6 +6,8 @@ set shiftwidth=2
 set smartindent
 set expandtab
 set number
+" Show tabs line
+set showtabline=2
 
 set list!
 set listchars=tab:→\ 
@@ -22,7 +24,7 @@ highlight nonText ctermbg=NONE
 ":PluginInstall
 
 call plug#begin('~/.vim/plugged')
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
